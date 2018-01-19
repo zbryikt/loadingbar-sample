@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    script(type='text/javascript',src='loading-bar.js')
+  body
+    style(type="text/css").
+      .traiwan-progress {
+        position: relative;
+      }
+      .traiwan-progress .ldBar-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      #bar2 {
+        width: 200px!important;
+        height: 200px!important;
+      }
+      #bar2 .mainline {
+        stroke-width: 5
+      }
+      #bar2 .baseline {
+        stroke-width: 8
+      }
+    #bar1.traiwan-progress(data-value="50",data-preset="circle")
+    #bar2.traiwan-progress(data-value="20",data-type="stroke",data-path="M50 25A25 25 0 0 1 50 75A25 25 0 0 1 50 25")
+    .ldBar(data-preset="circle")
+    script(type="text/javascript").
+      var bar = new ldBar("#bar1")
+      bar.set(60);
+      var bar = new ldBar("#bar2")
+      bar.set(90);
+

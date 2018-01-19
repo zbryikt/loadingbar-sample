@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="loading-bar.js"></script>
+  </head>
+  <body>
+    <style type="text/css">
+      .traiwan-progress {
+        position: relative;
+      }
+      .traiwan-progress .ldBar-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      #bar2 {
+        width: 200px!important;
+        height: 200px!important;
+      }
+      #bar2 .mainline {
+        stroke-width: 5
+      }
+      #bar2 .baseline {
+        stroke-width: 8
+      }
+    </style>
+    <div id="bar1" data-value="50" data-preset="circle" class="traiwan-progress"></div>
+    <div id="bar2" data-value="20" data-type="stroke" data-path="M50 25A25 25 0 0 1 50 75A25 25 0 0 1 50 25" class="traiwan-progress"></div>
+    <div data-preset="circle" class="ldBar"></div>
+    <script type="text/javascript">
+      var bar = new ldBar("#bar1")
+      bar.set(60);
+      var bar = new ldBar("#bar2")
+      bar.set(90);
+    </script>
+  </body>
+</html>
